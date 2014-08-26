@@ -12,7 +12,8 @@ public class LowestCommonMultiplier {
 	 * @param y
 	 * @return
 	 */
-	public static int findLCM(int x, int y){
-		return ((x-y)/GreatestCommonDivider.findGcd(x, y));
+	public int findLCM(int x, int y){
+		GreatestCommonDivider gcd = new GreatestCommonDivider();
+		return ((x-y)/gcd.findGcd(x, y));
 	}
 }

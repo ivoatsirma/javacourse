@@ -1,6 +1,9 @@
 package com.sirma.itt.javacourse.gcd;
 
 import static org.junit.Assert.*;
+
+import java.util.Scanner;
+
 import junit.framework.Assert;
 
 import org.junit.Test;
@@ -13,16 +16,28 @@ public class GcdExec {
 
 	@Test
 	public void test() {
-		// Testing the findFcd() method
-		GreatestCommonDivider testGcd = new GreatestCommonDivider();
-		int testGcdOne = testGcd.findGcd(21, 180);
-		int testGcdTwo = testGcd.findGcd(5, 10);
-		int testGcdThree = testGcd.findGcd(30, 77);
-		Assert.assertEquals(3, testGcdOne);
-		Assert.assertEquals(5, testGcdTwo);
-		Assert.assertNotSame(4, testGcdThree);
+		// two numbers input
+		System.out.println("Enter two integer numbers:");
+		System.out.println("Enter the first number:");
+		Scanner input = new Scanner(System.in);
+		int number1 = input.nextInt();
+		System.out.println("Enter the second number:");
+		int number2 = input.nextInt();
 		
-		//fail("Not yet implemented");
+		//check if number1>number2
+		//if not, replace them
+		if(number1<number2){
+			int temp = 0;
+		temp = number2;
+		number2 = number1;
+		number1 = temp;
+		}
+		
+		GreatestCommonDivider gcd = new GreatestCommonDivider();
+		LowestCommonMultiplier lcm = new LowestCommonMultiplier();
+		System.out.println("GCD: "+gcd.findGcd(number1, number2));
+		System.out.println("LCM: "+lcm.findLCM(number1, number2));
+		
 	}
 
 }
