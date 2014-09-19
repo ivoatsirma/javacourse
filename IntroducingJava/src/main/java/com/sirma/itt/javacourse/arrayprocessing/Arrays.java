@@ -12,8 +12,11 @@ public class Arrays {
 	 * @return
 	 */
     public int getMinElement(int[] array){
-		return 0;
-    	
+    	int minElIndex= 0;
+    	for (int i=1; i< array.length; i++){
+    		if (array[minElIndex]> array[i]) minElIndex = i;
+    	}	
+		return minElIndex+1;	
     } 
     
     /**
@@ -24,8 +27,11 @@ public class Arrays {
      */
     
     public int sum(int[] array){
-		return 0;
-    	
+    	int sumArray=0;
+    	for (int i=0; i< array.length; i++){
+    		sumArray += array[i];
+    	}	
+		return sumArray;
     } 
     
     /**
@@ -35,7 +41,10 @@ public class Arrays {
      * @return
      */
     public int print(int [] array) {
-		return 0;
     	
+    	for (int i=0; i< array.length; i++){
+    		System.out.println(array[i]+" "); 
+    	}	
+		
     }
 }
